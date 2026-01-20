@@ -30,11 +30,16 @@ sektor perkebunan kelapa sawit.
 ## Research Objectives
 
 Tujuan dari penelitian dan pengembangan sistem ini adalah:
-- Mendeteksi objek buah kelapa sawit pada citra
+- Mendeteksi objek buah kelapa sawit pada citra digital
 - Mengklasifikasikan tingkat kematangan buah kelapa sawit
-- Menerapkan YOLOv5 sebagai metode deteksi objek
+  ke dalam beberapa kelas kematangan
+- Mengembangkan model deteksi objek berbasis YOLOv5s
+  dengan integrasi CBAM, BiFPN, dan Transformer Refinement (TR)
+- Meningkatkan akurasi dan kualitas ekstraksi fitur
+  melalui mekanisme atensi dan penggabungan fitur multi-skala
 - Menghasilkan sistem deteksi berbasis deep learning
-  yang dapat digunakan secara real-time
+  yang mampu bekerja secara real-time
+  untuk mendukung proses monitoring dan evaluasi panen
 
 ---
 
