@@ -156,11 +156,19 @@ dalam sistem monitoring perkebunan.
 
 ## Application Preview
 
-Berikut contoh hasil deteksi tingkat kematangan
+### Berikut contoh hasil deteksi tingkat kematangan
 buah kelapa sawit menggunakan YOLOv5:
 
 ![Detection Result 1](assets/result1.png)
 ![Detection Result 2](assets/result2.png)
+
+---
+
+### Berikut adalah contoh penerapan aplikasi berbasis python anconda:
+![Detection App 1](assets/app1.png)
+![Detection App 2](assets/app2.png)
+![Detection App 3](assets/app3.png)
+
 ---
 
 ## Novelty Research
