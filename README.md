@@ -58,10 +58,18 @@ Kelas kematangan buah yang digunakan:
 - **Empty Bunch** – Jajang kosong
 - **Abnormal** – Buah abnormal / cacat
 
-Dataset dibagi ke dalam:
-- Data latih (training)
-- Data validasi (validation)
-- Data uji (testing)
+## Dataset dibagi ke dalam:
+### Data latih (training)
+![Train](assets/training.png)
+![Train Metric](assets/trainingmetric.png)
+
+### Data validasi (validation)
+![Val](assets/validation.png)
+![Val Metric](assets/validationmetric.png)
+
+### Data uji (testing)
+![Test](assets/testing.png)
+![Test Confidance Graph](assets/testingconvidance.png)
 
 ---
 
@@ -161,8 +169,7 @@ dalam sistem monitoring perkebunan.
 
 ## Application Preview
 
-### Berikut contoh hasil deteksi tingkat kematangan
-buah kelapa sawit menggunakan YOLOv5:
+### Berikut contoh hasil deteksi tingkat kematanganbuah kelapa sawit menggunakan CNN:
 
 ![Detection Result 1](assets/result1.png)
 ![Detection Result 2](assets/result2.png)
