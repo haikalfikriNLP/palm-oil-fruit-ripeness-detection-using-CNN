@@ -1,15 +1,16 @@
 # Palm Oil Fruit Ripeness Detection using CNN
 
-Deteksi tingkat kematangan buah kelapa sawit
-menggunakan YOLOv5s yang dikombinasikan
-dengan Convolutional Block Attention Module (CBAM),
-Transformer Refinement (TR),
-dan Bidirectional Feature Pyramid Network (BiFPN).
+Penelitian ini berfokus pada deteksi tingkat kematangan
+buah kelapa sawit menggunakan **YOLOv5s**
+yang dikombinasikan dengan
+**Convolutional Block Attention Module (CBAM)**,
+**Transformer Refinement (TR)**,
+dan **Bidirectional Feature Pyramid Network (BiFPN)**.
 
-Sistem ini dirancang untuk melakukan
-deteksi objek secara real-time
-dan mengklasifikasikan tingkat kematangan buah kelapa sawit
-berdasarkan citra digital.
+Sistem dirancang untuk melakukan deteksi objek
+secara **real-time**
+serta mengklasifikasikan tingkat kematangan
+buah kelapa sawit berdasarkan citra digital.
 
 ---
 
@@ -20,10 +21,11 @@ secara manual sangat bergantung pada pengalaman manusia
 dan berpotensi menimbulkan ketidakkonsistenan penilaian.
 
 Dengan memanfaatkan teknologi **computer vision**
-dan **deep learning**, proses deteksi kematangan
+dan **deep learning**,
+proses deteksi kematangan buah kelapa sawit
 dapat dilakukan secara otomatis,
-akurat, dan efisien untuk mendukung
-sektor perkebunan kelapa sawit.
+akurat, dan efisien
+guna mendukung produktivitas sektor perkebunan.
 
 ---
 
@@ -33,12 +35,12 @@ Tujuan dari penelitian dan pengembangan sistem ini adalah:
 - Mendeteksi objek buah kelapa sawit pada citra digital
 - Mengklasifikasikan tingkat kematangan buah kelapa sawit
   ke dalam beberapa kelas kematangan
-- Mengembangkan model deteksi objek berbasis YOLOv5s
-  dengan integrasi CBAM, BiFPN, dan Transformer Refinement (TR)
+- Mengembangkan model deteksi objek berbasis **YOLOv5s**
+  dengan integrasi **CBAM, BiFPN, dan Transformer Refinement (TR)**
 - Meningkatkan akurasi dan kualitas ekstraksi fitur
   melalui mekanisme atensi dan penggabungan fitur multi-skala
 - Menghasilkan sistem deteksi berbasis deep learning
-  yang mampu bekerja secara real-time
+  yang mampu berjalan secara **real-time**
   untuk mendukung proses monitoring dan evaluasi panen
 
 ---
@@ -48,49 +50,54 @@ Tujuan dari penelitian dan pengembangan sistem ini adalah:
 Dataset yang digunakan berupa citra buah kelapa sawit
 yang telah dianotasi dalam format **YOLO**.
 
-Kelas kematangan buah yang digunakan:
 ### Fruit Ripeness Classes
-
 - **Unripe** – Buah mentah
-- **Underipe** – Kurang matang
+- **Underripe** – Kurang matang
 - **Ripe** – Matang
 - **Overripe** – Terlalu matang
-- **Empty Bunch** – Jajang kosong
+- **Empty Bunch** – Janjang kosong
 - **Abnormal** – Buah abnormal / cacat
 
-## Dataset dibagi ke dalam:
-### Data latih (training)
-![Train](assets/training.png)
-![Train Metric](assets/trainingmetric.png)
+---
 
-### Data validasi (validation)
-![Val](assets/validation.png)
-![Val Metric](assets/validationmetric.png)
+### Dataset Split
 
-### Data uji (testing)
-![Test](assets/testing.png)
-![Test Confidance Graph](assets/testingconvidence.png)
+#### Data Latih (Training)
+<p align="center">
+  <img src="assets/training.png" width="400"/>
+  <img src="assets/trainingmetric.png" width="400"/>
+</p>
+
+#### Data Validasi (Validation)
+<p align="center">
+  <img src="assets/validation.png" width="400"/>
+  <img src="assets/validationmetric.png" width="400"/>
+</p>
+
+#### Data Uji (Testing)
+<p align="center">
+  <img src="assets/testing.png" width="400"/>
+  <img src="assets/testingconvidence.png" width="400"/>
+</p>
 
 ---
 
 ## Methodology
 
 Penelitian ini mengusulkan pengembangan model deteksi objek
-berbasis YOLOv5s dengan mengintegrasikan
-Convolutional Block Attention Module (CBAM),
-Transformer Refinement (TR),
-dan Bidirectional Feature Pyramid Network (BiFPN).
+berbasis **YOLOv5s**
+dengan mengintegrasikan
+**CBAM**, **BiFPN**, dan **Transformer Refinement (TR)**.
 
 CBAM digunakan untuk meningkatkan kualitas ekstraksi fitur
 melalui mekanisme atensi kanal dan spasial,
 sehingga model mampu memfokuskan perhatian
 pada area citra yang relevan.
 
-BiFPN diterapkan pada bagian neck
+BiFPN diterapkan pada bagian *neck*
 untuk mengoptimalkan penggabungan fitur multi-skala
-secara dua arah (top-down dan bottom-up),
-yang memungkinkan aliran informasi fitur
-menjadi lebih efektif.
+secara dua arah (*top-down* dan *bottom-up*),
+sehingga aliran informasi fitur menjadi lebih efektif.
 
 Transformer Refinement (TR) digunakan
 untuk menangkap hubungan global antar fitur
@@ -98,96 +105,84 @@ dan memperbaiki representasi fitur tingkat lanjut,
 khususnya pada objek dengan variasi ukuran
 dan tingkat kematangan yang beragam.
 
-Kombinasi YOLOv5s, CBAM, TR, dan BiFPN
-diharapkan mampu meningkatkan akurasi deteksi
-tingkat kematangan buah kelapa sawit
-dengan tetap mempertahankan efisiensi komputasi.
-
-Metode yang digunakan dalam penelitian ini meliputi:
-1. Pengumpulan dan seleksi citra buah kelapa sawit
-2. Pembagian dataset (train, validation, test)
-3. Pelatihan model menggunakan **YOLOv5**
-4. Evaluasi performa model
-5. Visualisasi hasil deteksi
-
 ---
 
 ## Model Architecture
 
-Model deteksi objek yang digunakan adalah **YOLOv5**,
+Model deteksi objek yang digunakan adalah **YOLOv5s**
 yang terdiri dari tiga komponen utama:
-- **Backbone**: Ekstraksi fitur
-- **Neck**: Penggabungan fitur multi-skala
-- **Head**: Prediksi bounding box dan kelas objek
+- **Backbone** – Ekstraksi fitur
+- **Neck** – Penggabungan fitur multi-skala
+- **Head** – Prediksi bounding box dan kelas objek
 
-CBAM diintegrasikan pada bagian backbone
-untuk meningkatkan kualitas ekstraksi fitur,
-sedangkan Transformer Refinement (TR)
-diterapkan pada bagian neck
-sebelum proses prediksi objek.
+<p align="center">
+  <img src="assets/architecture.png" width="650"/>
+</p>
 
-![architectur](assets/architecture.png)
-
-YOLOv5s Standart :
+**YOLOv5s Standar:**
 Input → Backbone → Neck (FPN + PAN) → Head
 
-YOLOv5s + CBAM + TR + BiFPN:
+**YOLOv5s + CBAM + TR + BiFPN:**
 Input
 → Backbone + CBAM
 → Neck (BiFPN + Transformer Refinement)
 → Head (Deteksi Objek)
 
+
 ---
 
 ## Evaluation Metrics
 
-Performa model dievaluasi menggunakan metrik berikut:
+Performa model dievaluasi menggunakan metrik:
 - Precision
 - Recall
 - mAP@0.5
 - mAP@0.5:0.95
 
-Metrik tersebut digunakan untuk mengukur
-akurasi deteksi dan klasifikasi tingkat kematangan buah.
-![metriccurve](assets/metriccurve.png)
+<p align="center">
+  <img src="assets/metriccurve.png" width="600"/>
+</p>
 
 ---
 
 ## Results and Discussion
 
 Hasil pengujian menunjukkan bahwa
-model YOLOv5 mampu mendeteksi
-dan mengklasifikasikan tingkat kematangan
-buah kelapa sawit dengan baik.
+model YOLOv5s yang diusulkan
+mampu mendeteksi dan mengklasifikasikan
+tingkat kematangan buah kelapa sawit
+dengan baik.
 
-Model memberikan hasil deteksi yang stabil
-pada berbagai kondisi citra,
-serta menunjukkan potensi penerapan
-dalam sistem monitoring perkebunan.
+Integrasi CBAM, BiFPN, dan Transformer Refinement
+membantu meningkatkan kualitas ekstraksi fitur
+serta kestabilan deteksi
+pada berbagai kondisi citra.
 
 ---
 
 ## Application Preview
 
-### Berikut contoh hasil deteksi tingkat kematanganbuah kelapa sawit menggunakan CNN:
+### Contoh hasil deteksi tingkat kematangan buah kelapa sawit
+<p align="center">
+  <img src="assets/result1.png" width="400"/>
+  <img src="assets/result2.png" width="400"/>
+</p>
 
-![Detection Result 1](assets/result1.png)
-![Detection Result 2](assets/result2.png)
-
----
-
-### Berikut adalah contoh penerapan aplikasi berbasis python anconda:
-![Detection App 1](assets/app1.png)
-![Detection App 2](assets/app2.png)
-![Detection App 3](assets/app3.png)
-
----
-
-## Novelty Research
-
-Mengembangkan sistem deteksi objek
-tingkat kematangan buah kelapa sawit
-menggunakan YOLOv5s berbasis CBAM,
-BiFPN, dan Transformer Refinement.
+### Contoh penerapan aplikasi berbasis Python (Anaconda)
+<p align="center">
+  <img src="assets/app1.png" width="300"/>
+  <img src="assets/app2.png" width="300"/>
+  <img src="assets/app3.png" width="300"/>
+</p>
 
 ---
+
+## Research Novelty
+
+Penelitian ini mengusulkan **model deteksi tingkat kematangan buah kelapa sawit**
+dengan mengintegrasikan **YOLOv5s, CBAM, BiFPN, dan Transformer Refinement**,
+yang memungkinkan peningkatan akurasi deteksi
+melalui mekanisme atensi dan penggabungan fitur multi-skala
+tanpa mengorbankan efisiensi komputasi real-time.
+
+
