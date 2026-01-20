@@ -69,7 +69,7 @@ Kelas kematangan buah yang digunakan:
 
 ### Data uji (testing)
 ![Test](assets/testing.png)
-![Test Confidance Graph](assets/testingconvidance.png)
+![Test Confidance Graph](assets/testingconvidence.png)
 
 ---
 
